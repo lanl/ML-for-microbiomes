@@ -6,5 +6,5 @@
 for Topic_I in ${SLURM_ARRAY_TASK_ID}
 do
 echo $Topic_I
-~/Documents/Mallet/bin/mallet train-topics --input seq_all.mallet --num-topics ${Topic_I} --optimize-interval 100 --num-iterations 50000 --num-top-words 10 --optimize-burn-in 1000 --num-threads 40 --evaluator-filename ev_${Topic_I}.mallet --diagnostics-file diagnostics_${Topic_I}.xml --output-topic-keys topic-keys_${Topic_I}.dat --topic-word-weights-file topic-word-weights_${Topic_I}.dat --word-topic-counts-file topic-counts-file_${Topic_I}.dat --output-topic-docs topic-docs_${Topic_I}.dat --output-doc-topics doc-topic_${Topic_I}.dat --output-state gibbs_out_${Topic_I}.dat
+~/Documents/Mallet/bin/mallet train-topics --input seq_all.mallet --num-topics ${Topic_I} --optimize-interval 100 --num-iterations 100000 --num-top-words 10 --optimize-burn-in 1000 --num-threads 40 --evaluator-filename ev_${Topic_I}.mallet --diagnostics-file diagnostics_${Topic_I}.xml --output-topic-keys topic-keys_${Topic_I}.dat --topic-word-weights-file topic-word-weights_${Topic_I}.dat --word-topic-counts-file topic-counts-file_${Topic_I}.dat --output-topic-docs topic-docs_${Topic_I}.dat --output-doc-topics doc-topic_${Topic_I}.dat --output-state gibbs_out_${Topic_I}.dat
 done
