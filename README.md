@@ -1,6 +1,8 @@
 # Machine-learning-methods-for-microbiome-studies
 
+See LICENSE.txt for licensing information. 
 
+Triad National Security, LLC (Triad) owns the copyright, which it identifies as project number LA-C22098.
 
 © 2022. Triad National Security, LLC. All rights reserved.
 This program was produced under U.S. Government contract 89233218CNA000001 for Los Alamos
