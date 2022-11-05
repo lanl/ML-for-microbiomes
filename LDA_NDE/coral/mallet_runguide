@@ -1,0 +1,13 @@
+MALLET: https://mimno.github.io/Mallet/topics
+
+1. ~/Documents/Mallet/bin/mallet train-topics --help or ~/Documents/Mallet/bin/mallet --help
+2. Create a folder where each file contains words (see in jupyter notebook: ‘create files for MALLET’ cell)
+3. rm -f .DS_Store (for Mac only)
+4. Create all.mallet file: ~/Documents/Mallet/bin/mallet import-dir --input ./ASV --output all.mallet --keep-sequence --token-regex "[\p{L}_\p{N}_\p{Pd}_\p{L}.\p{N}.\p{N}(\p{N})]+" --preserve-case True
+5. Run mallet with default alpha = 5/num_topics, not symmetric, beta = 0.01 or specify alpha, beta: 
+
+
+~/Documents/Mallet/bin/mallet train-topics --input all.mallet --num-topics 20 --optimize-interval 1000 --num-iterations 50000 --num-threads 4 --num-top-words 10 --optimize-burn-in 1000 --evaluator-filename ev.mallet --output-state state.gz --diagnostics-file diagnostics.xml --output-topic-keys topic-keys.dat --topic-word-weights-file topic-word-weights.dat --word-topic-counts-file topic-counts-file.dat --output-topic-docs topic-docs.dat --output-doc-topics doc-topic.dat --output-model out_model --output-state gibbs_out.gz --output-model-interval 200 --show-topics-interval 200 --alpha 5/6 --beta 0.01
+
+or via job script:
+sbatch --array=15,20 mallet_script_corals
