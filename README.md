@@ -1,4 +1,5 @@
 # Machine-learning-methods-for-microbiome-studies
+This repository contains code in jupyter notebooks and data files accompanying the paper "Latent Dirichlet allocation modeling of environmental microbiomes".
 
 See LICENSE.txt for licensing information. 
 
