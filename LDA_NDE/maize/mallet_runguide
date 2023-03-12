@@ -1,0 +1,19 @@
+MALLET: https://mimno.github.io/Mallet/topics
+
+1. ~/Documents/Mallet/bin/mallet train-topics --help or ~/Documents/Mallet/bin/mallet --help
+2. Create a folder where each file contains words (see in jupyter notebook: ‘create files for MALLET’ cell)
+3. rm -f .DS_Store (for Mac only)
+4. Create all.mallet file: ~/Documents/Mallet/bin/mallet import-dir --input ./ASV --output all.mallet --keep-sequence --token-regex "[\p{L}_\p{N}_\p{Pd}_\p{L}.\p{N}.\p{N}(\p{N})]+" --preserve-case True
+5. Run mallet with default alpha = 5/num_topics, not symmetric, beta = 0.01 or specify alpha, beta: 
+
+#for ASV
+~/Documents/Mallet/bin/mallet train-topics --input all.mallet --num-topics 25 --optimize-interval 10 --num-iterations 100000 --num-threads 40 --num-top-words 10 --optimize-burn-in 20 --evaluator-filename ev.mallet --output-state state.gz --diagnostics-file diagnostics.xml --output-topic-keys topic-keys.dat --topic-word-weights-file topic-word-weights.dat --word-topic-counts-file topic-counts-file.dat --output-topic-docs topic-docs.dat --output-doc-topics doc-topic.dat --output-model out_model 
+
+
+
+or via job script for phylum, class, order, family, ASV levels, respectively: 
+sbatch --array=6 mallet_script_maize
+sbatch --array=8 mallet_script_maize
+sbatch --array=10 mallet_script_maize
+sbatch --array=20 mallet_script_maize
+sbatch --array=25 mallet_script_maize

@@ -1,0 +1,10 @@
+#!/bin/bash
+#SBATCH --job-name=test_first_job
+#SBATCH --output=test_first_res.txt
+#SBATCH --nodes=1
+#SBATCH --time=04:00:00
+for Topic_I in ${SLURM_ARRAY_TASK_ID}
+do
+echo $Topic_I
+~/Documents/Mallet/bin/mallet train-topics --input all.mallet --num-topics ${Topic_I} --optimize-interval 10 --num-iterations 10000 --num-top-words 10 --optimize-burn-in 20 --num-threads 40 --evaluator-filename ev_${Topic_I}.mallet --diagnostics-file diagnostics_${Topic_I}.xml --output-topic-keys topic-keys_${Topic_I}.dat --topic-word-weights-file topic-word-weights_${Topic_I}.dat --word-topic-counts-file topic-counts-file_${Topic_I}.dat --output-topic-docs topic-docs_${Topic_I}.dat --output-doc-topics doc-topic_${Topic_I}.dat
+done
