@@ -1,5 +1,6 @@
 # Machine-learning-methods-for-microbiome-studies
 This repository contains code in jupyter notebooks and data files accompanying the paper "Latent Dirichlet allocation modeling of environmental microbiomes".
+Paper: Kim, A., Sevanto, S., Moore, E. R., & Lubbers, N. (2023). Latent Dirichlet Allocation modeling of environmental microbiomes. PLoS Computational Biology, 19(6), e1011075; https://doi.org/10.1371/journal.pcbi.1011075.
 
 See LICENSE.txt for licensing information. 
 
